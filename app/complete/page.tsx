@@ -1,0 +1,4 @@
+"use client";
+import { useEffect, useState } from "react";
+import { Header } from "@/components/Header";
+export default function Complete(){const [r,setR]=useState<any>();useEffect(()=>{const v=sessionStorage.getItem('booking_complete');if(v)setR(JSON.parse(v))},[]);return <main className="page"><Header/><div className="card" style={{textAlign:'center',marginTop:40}}><div style={{fontSize:55,color:'#1e4fa3'}}>✓</div><h1>예약이 완료되었습니다!</h1>{r&&<div style={{background:'#f1f5fc',textAlign:'left',padding:18,borderRadius:10,lineHeight:2}}><b>이름</b>　{r.name}<br/><b>예약일</b>　{r.event_date}<br/><b>예약시간</b>　{r.slot_time?.slice(0,5)}<br/><b>예약 PIN</b>　{r.pin}<br/><b>행사 장소</b>　{r.location}</div>}<a href="/reservation" className="btn" style={{display:'block',textDecoration:'none',marginTop:20}}>예약 내역 보기</a><a href="/" className="btn btn-outline" style={{display:'block',textDecoration:'none',marginTop:10}}>메인으로 이동</a></div></main>}

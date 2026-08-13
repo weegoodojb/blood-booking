@@ -1,0 +1,19 @@
+# Dependencies and Next.js build artifacts
+node_modules/
+.next/
+out/
+
+# Local environment secrets
+.env.local
+.env*.local
+
+# Logs and editor/OS files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Test/export artifacts
+coverage/
+output/
+tmp/

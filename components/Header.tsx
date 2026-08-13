@@ -1,0 +1,3 @@
+import Image from "next/image";
+export function Header({ back }: { back?: boolean }) { return <header style={{marginBottom:24}}>{back && <a href="/" style={{color:'#1e4fa3',fontWeight:700,textDecoration:'none'}}>← 뒤로</a>}<Image src="/hospital-logo.png" alt="순천향대학교 부천병원" width={270} height={75} priority style={{width:'220px',height:'auto',display:'block',margin:back?'14px 0 0':'0'}} /></header>; }
+export function Contacts({contacts}:{contacts:{label:string;phone:string}[]}) { return <section style={{marginTop:26,paddingTop:18,borderTop:'1px solid #e5e9f0'}}><b>예약 문의</b>{contacts.filter(x=>x.phone).map(x=><div key={x.label} className="hint" style={{marginTop:8}}>{x.label} <a href={`tel:${x.phone}`} style={{color:'#1e4fa3',marginLeft:8}}>{x.phone}</a></div>)}</section> }
